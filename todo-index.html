@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="todo-style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <header class="app-header">
+                <h1>📝 My To-Do List</h1>
+                <p class="subtitle">Stay organized and productive</p>
+            </header>
+
+            <div class="input-section">
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn">
+                        <span>+</span> Add Task
+                    </button>
+                </div>
+                <div class="category-filter">
+                    <label for="categorySelect">Filter by category:</label>
+                    <select id="categorySelect" class="category-selector">
+                        <option value="all">All Tasks</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="health">Health</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Pending:</span>
+                    <span class="stat-value pending" id="pendingTasks">0</span>
+                </div>
+            </div>
+
+            <div id="todoList" class="todo-list">
+                <!-- Tasks will be dynamically added here -->
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">✨</div>
+                <p>No tasks yet. Add one to get started!</p>
+            </div>
+
+            <div class="action-buttons">
+                <button id="clearCompletedBtn" class="action-btn clear-btn">
+                    Clear Completed
+                </button>
+                <button id="clearAllBtn" class="action-btn delete-btn">
+                    Delete All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="todo-script.js"></script>
+</body>
+</html>
